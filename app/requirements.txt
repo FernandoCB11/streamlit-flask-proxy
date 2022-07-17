@@ -1,0 +1,9 @@
+streamlit==1.1.0
+streamlit-tags==1.2.8
+requests
+Flask==2.0.2
+Flask-Session==0.4.0
+werkzeug==2.0.0
+cachelib
+Flask-Sockets==0.2.1
+websocket-client==1.2.1

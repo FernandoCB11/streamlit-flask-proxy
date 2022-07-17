@@ -1,0 +1,19 @@
+FROM
+
+RUN yum install python3
+
+RUN python3 -m pip install supervisor
+
+ENV PATH=$PATH:/root/.local/bin
+
+
+COPY . /src
+WORKDIR /src
+
+RUN python3 -m pip install ndg-httpsclient pyopenssl pyans1
+
+RUN python3 -m pip install -r requirements.txt
+
+EXPOSE 8080
+EXPOSE 443
+ENTRYPOINT ["supervisord", "-c", "src/supervisor/service_script.conf"]
